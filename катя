@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Економіка України - Топ сайт з квестами</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  body { font-family: 'Roboto', sans-serif; background: #f4f7fc; margin:0; }
+  header { background: linear-gradient(90deg,#004aad,#0077ff); color:white; padding:40px 20px; text-align:center; }
+  header h1 { font-family:'Playfair Display',serif; font-size:3em; margin-bottom:10px;}
+  header p { font-size:1.2em;}
+  nav { background:#0056c1; display:flex; justify-content:center; flex-wrap:wrap; padding:15px; gap:20px; }
+  nav a { color:white; text-decoration:none; font-weight:600; transition:.3s; }
+  nav a:hover { color:#ffd700; }
+  main { max-width:1200px; margin:30px auto; padding:0 20px; }
+  section { background:white; border-radius:12px; padding:30px; margin-bottom:30px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+  section:hover { transform: translateY(-5px); transition:.3s; }
+  h2 { color:#004aad; font-family:'Playfair Display',serif; margin-bottom:20px; }
+  table { width:100%; border-collapse:collapse; margin-top:15px; }
+  table, th, td { border:1px solid #ccc; }
+  th, td { padding:10px; text-align:center; }
+  th { background:#004aad; color:white; }
+  .login-form { max-width:450px; margin:0 auto; padding:25px; background:#e6f0ff; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+  .login-form input[type=text], .login-form input[type=password] { width:100%; padding:12px 15px; margin:12px 0; border:1px solid #ccc; border-radius:8px; }
+  .login-form input[type=submit] { width:100%; padding:12px; border:none; border-radius:8px; background:#004aad; color:white; font-size:1.1em; cursor:pointer; }
+  .login-form input[type=submit]:hover { background:#002d6b; }
+  canvas { margin-top:20px; }
+  .quest-container { background:#e0f0ff; padding:20px; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.15); margin-top:20px; }
+  .quest-container button { margin:5px; padding:10px 15px; border:none; border-radius:8px; cursor:pointer; background:#0077ff; color:white; }
+  footer { background:#004aad; color:white; text-align:center; padding:20px; font-size:0.9em; }
+  @media(max-width:768px){ header h1{ font-size:2em;} nav{flex-direction:column; gap:10px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Економіка України</h1>
+  <p>Виконала студентка Желінська Катерина</p>
+</header>
+
+<nav>
+  <a href="#overview">Огляд</a>
+  <a href="#sectors">Сектори</a>
+  <a href="#tables">Таблиці</a>
+  <a href="#charts">Графіки</a>
+  <a href="#login">Вхід викладача</a>
+  <a href="#quests">Квести</a>
+</nav>
+
+<main>
+
+<section id="overview">
+  <h2>Огляд економіки України</h2>
+  <p>Україна має багатогалузеву економіку: сільське господарство, промисловість, ІТ-сектор та енергетику. Після 2014 року країна активно реформує економічну систему та інтегрується у світові ринки.</p>
+</section>
+
+<section id="sectors">
+  <h2>Основні сектори економіки</h2>
+  <ul>
+    <li>Сільське господарство</li>
+    <li>Промисловість</li>
+    <li>Енергетика</li>
+    <li>ІТ та стартапи</li>
+    <li>Фінанси та послуги</li>
+  </ul>
+</section>
+
+<section id="tables">
+  <h2>Таблиці економічних показників</h2>
+  <table>
+    <tr><th>Рік</th><th>ВВП (млрд $)</th><th>Експорт (млрд $)</th><th>Імпорт (млрд $)</th></tr>
+    <tr><td>2020</td><td>155</td><td>45</td><td>50</td></tr>
+    <tr><td>2021</td><td>170</td><td>50</td><td>55</td></tr>
+    <tr><td>2022</td><td>155</td><td>40</td><td>45</td></tr>
+    <tr><td>2023</td><td>180</td><td>55</td><td>60</td></tr>
+  </table>
+</section>
+
+<section id="charts">
+  <h2>Графіки економічних даних</h2>
+  <canvas id="gdpChart" width="400" height="200"></canvas>
+  <canvas id="tradeChart" width="400" height="200"></canvas>
+</section>
+
+<section id="login">
+  <h2>Вхід для викладача</h2>
+  <div class="login-form">
+    <form action="#" method="POST">
+      <label for="username">Логін:</label>
+      <input type="text" id="username" name="username" placeholder="Введіть логін">
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введіть пароль">
+      <input type="submit" value="Увійти">
+    </form>
+  </div>
+</section>
+
+<section id="quests">
+  <h2>Квести з економіки</h2>
+
+  <div class="quest-container" id="quest1"></div>
+  <div class="quest-container" id="quest2"></div>
+  <div class="quest-container" id="quest3"></div>
+  <div class="quest-container" id="quest4"></div>
+  <div class="quest-container" id="quest5"></div>
+
+</section>
+
+</main>
+
+<footer>
+  © 2025 Катерина Желінська
+</footer>
+
+<script>
+  // Графіки
+  const ctx1 = document.getElementById('gdpChart').getContext('2d');
+  const gdpChart = new Chart(ctx1, {
+    type: 'line',
+    data: {
+      labels: ['2020','2021','2022','2023'],
+      datasets: [{
+        label: 'ВВП (млрд $)',
+        data: [155,170,155,180],
+        borderColor: '#004aad',
+        backgroundColor: 'rgba(0,74,173,0.2)',
+        fill:true,
+        tension:0.3
+      }]
+    },
+    options: { responsive:true, plugins:{ legend:{ position:'top' } } }
+  });
+
+  const ctx2 = document.getElementById('tradeChart').getContext('2d');
+  const tradeChart = new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['2020','2021','2022','2023'],
+      datasets: [
+        { label: 'Експорт', data: [45,50,40,55], backgroundColor:'#0077ff' },
+        { label: 'Імпорт', data: [50,55,45,60], backgroundColor:'#004aad' }
+      ]
+    },
+    options: { responsive:true, plugins:{ legend:{ position:'top' } } }
+  });
+
+  // Дані для 5 квестів
+  const quests = [
+    {
+      elementId: "quest1",
+      questions: [
+        {question: "Який ВВП України у 2023 році?", options: ["155 млрд $","170 млрд $","180 млрд $","200 млрд $"], answer:"180 млрд $"},
+        {question: "Який рік мав найнижчий експорт?", options:["2020","2021","2022","2023"], answer:"2022"}
+      ]
+    },
+    {
+      elementId: "quest2",
+      questions: [
+        {question: "Який сектор економіки є найбільшим?", options:["Сільське господарство","ІТ та стартапи","Промисловість","Фінанси та послуги"], answer:"Промисловість"},
+        {question: "В якому секторі працює найбільше людей?", options:["Сільське господарство","ІТ","Промисловість","Фінанси"], answer:"Сільське господарство"}
+      ]
+    },
+    {
+      elementId: "quest3",
+      questions: [
+        {question: "Що більше: експорт чи імпорт у 2021?", options:["Експорт","Імпорт"], answer:"Імпорт"},
+        {question: "Який сектор економіки є високотехнологічним?", options:["Сільське господарство","ІТ та стартапи","Промисловість","Фінанси"], answer:"ІТ та стартапи"}
+      ]
+    },
+    {
+      elementId: "quest4",
+      questions: [
+        {question: "Який рік показав спад ВВП?", options:["2020","2021","2022","2023"], answer:"2022"},
+        {question: "Який сектор найменш прибутковий?", options:["Сільське господарство","ІТ","Промисловість","Фінанси"], answer:"Сільське господарство"}
+      ]
+    },
+    {
+      elementId: "quest5",
+      questions: [
+        {question: "Який показник зріс у 2023 порівняно з 2022?", options:["ВВП","Експорт","Імпорт","Всі разом"], answer:"Всі разом"},
+        {question: "Яка тенденція у ВВП останні 4 роки?", options:["Падіння","Зростання","Коливання","Стабільність"], answer:"Коливання"}
+      ]
+    }
+  ];
+
+  // Функція для створення квестів
+  quests.forEach(q => {
+    let currentQuestion = 0;
+    const container = document.getElementById(q.elementId);
+    const questionEl = document.createElement("div");
+    const optionsEl = document.createElement("div");
+    const resultEl = document.createElement("div");
+    const nextBtn = document.createElement("button");
+
+    questionEl.style.marginBottom="15px";
+    questionEl.style.fontWeight="600";
+    resultEl.style.marginTop="10px";
+    resultEl.style.fontWeight="bold";
+    nextBtn.textContent="Наступне завдання";
+    nextBtn.style.display="none";
+
+    container.appendChild(questionEl);
+    container.appendChild(optionsEl);
+    container.appendChild(resultEl);
+    container.appendChild(nextBtn);
+
+    function loadQuestion() {
+      const qData = q.questions[currentQuestion];
+      questionEl.textContent = qData.question;
+      optionsEl.innerHTML = "";
+      resultEl.textContent="";
+      nextBtn.style.display="none";
+
+      qData.options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.textContent=opt;
+        btn.onclick=()=>checkAnswer(opt);
+        optionsEl.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected){
+      const correct = q.questions[currentQuestion].answer;
+      if(selected===correct){ resultEl.textContent="Правильно! 🎉"; resultEl.style.color="green"; }
+      else { resultEl.textContent=`Невірно. Правильна відповідь: ${correct}`; resultEl.style.color="red"; }
+      nextBtn.style.display="inline-block";
+    }
+
+    nextBtn.onclick=()=>{
+      currentQuestion++;
+      if(currentQuestion<q.questions.length){ loadQuestion(); }
+      else{
+        questionEl.textContent="Вітаємо! Ви пройшли квест! 🏆";
+        optionsEl.innerHTML="";
+        nextBtn.style.display="none";
+        resultEl.textContent="";
+      }
+    }
+
+    loadQuestion();
+  });
+
+</script>
+
+</body>
+</html>
